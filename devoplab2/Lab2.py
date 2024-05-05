@@ -11,11 +11,10 @@ def calc_average_temperature(x):
     length = len(x)
     y = sum(x)
     avg = y/length
-    print("Average temp: "+ str(avg))
+    return avg
 
 def calc_min_max_temperature(x):
-    print("Max value: " + str(max(x)))
-    print("Min val: " + str(min(x)))
+    return max(x), min(x)
 
 def calc_median_temperature(x):
     n = len(x)
@@ -24,13 +23,14 @@ def calc_median_temperature(x):
         return x[n//2]
     return (x[n//2]+x[n//2 - 1])/2
 
-
 def main():
     display_main_menu()
     x = get_user_input()
-    calc_average_temperature(x)
-    calc_min_max_temperature(x)
-    calc_median_temperature(x)
-    print("Median temp is " + str(calc_median_temperature(x)))
+    print("Average temp: ", calc_average_temperature(x))
+    max_temp, min_temp = calc_min_max_temperature(x)
+    print("Max value: ", max_temp)
+    print("Min val: ", min_temp)
+    print("Median temp is ", calc_median_temperature(x))
 
-    
+if __name__ == "__main__":
+    main()
